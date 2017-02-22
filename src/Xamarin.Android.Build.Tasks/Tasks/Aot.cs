@@ -359,8 +359,7 @@ namespace Xamarin.Android.Tasks
 			var arguments = aotOptions + " " + assembly;
 
 			Log.LogMessage (MessageImportance.High, "[AOT] " + assembly);
-			Log.LogMessage (MessageImportance.Low, "Mono arguments: " + arguments);
-			Log.LogMessage (MessageImportance.Low, "MONO_PATH=" + assembliesPath);
+			Log.LogMessage (MessageImportance.Low, String.Format ("AOT compiler command line: MONO_PATH={0} {1} {2}", assembliesPath, aotCompiler, arguments));
 
 			var psi = new ProcessStartInfo () {
 				FileName = aotCompiler,
